@@ -6,12 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import java.util.ArrayList;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button straightButton;
     private Button rightButton;
     private Button leftButton;
+    private Button homeButton;
     ArrayList<String> directionList = new ArrayList<>();
 
     @Override
@@ -23,9 +25,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         straightButton = findViewById(R.id.straightButton);
         rightButton = findViewById(R.id.rightButton);
         leftButton = findViewById(R.id.leftButton);
+        homeButton = findViewById(R.id.homeButton);
         straightButton.setOnClickListener(this);
         rightButton.setOnClickListener(this);
         leftButton.setOnClickListener(this);
+        homeButton.setOnClickListener(this);
 
     }
 
@@ -45,6 +49,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case (R.id.leftButton):
                 Toast.makeText(this, "You Clicked The Left Button", Toast.LENGTH_SHORT).show();
                 directionList.add("Left");
+                break;
+            case (R.id.homeButton):
+                Intent goToDirectionList = new Intent(MainActivity.this, viewDirections.class);
+                goToDirectionList.putExtra("listOfDirections", directionList);
+                startActivity(goToDirectionList);
                 break;
         }
     }
