@@ -9,6 +9,7 @@
 - [x] Buttons on MainActivity
 - [x] Open second activity once correct button is pressed
 - [x] Display direction choices in second activity
+- [ ] Get screenshots and add to portfolio site
 - [ ] Add some style to the entire application
 - [ ] Add the ability to undo a button press
 - [ ] Add the ability to delete a 'journey' while within the app
