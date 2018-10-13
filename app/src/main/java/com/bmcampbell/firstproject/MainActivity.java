@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
+        //Each time you press a direction button, corresponding message displayed and corresponding value added to direction array
         switch (view.getId()) {
             case (R.id.straightButton):
                 Toast.makeText(this, "You Clicked The Straight Button", Toast.LENGTH_SHORT).show();
@@ -51,8 +52,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 directionList.add("Left");
                 break;
             case (R.id.homeButton):
+
+                //This creates a new intent that will be used to call "viewDirections.java" activity. "viewDirections.java" is for displaying the list of directions
                 Intent goToDirectionList = new Intent(MainActivity.this, viewDirections.class);
-                goToDirectionList.putExtra("listOfDirections", directionList);
+
+                //Passes the array of directions into the new activity
+                goToDirectionList.putStringArrayListExtra("listOfDirections", directionList);
                 startActivity(goToDirectionList);
                 break;
         }
