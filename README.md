@@ -12,6 +12,7 @@
 - [ ] Add some style to the entire application
 - [ ] Add the ability to undo a button press
 - [ ] Add the ability to delete a 'journey' while within the app
+- [ ] Put app on the Google Play Store
 ### Future: 
 - [ ] Create server + database and allow for creation of user accounts
 - [ ] Allow users to save journeys
