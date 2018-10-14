@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button rightButton;
     private Button leftButton;
     private Button homeButton;
+    private Button undoButton;
     ArrayList<String> directionList = new ArrayList<>();
 
     @Override
@@ -26,10 +27,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rightButton = findViewById(R.id.rightButton);
         leftButton = findViewById(R.id.leftButton);
         homeButton = findViewById(R.id.homeButton);
+        undoButton = findViewById(R.id.undoButton);
         straightButton.setOnClickListener(this);
         rightButton.setOnClickListener(this);
         leftButton.setOnClickListener(this);
         homeButton.setOnClickListener(this);
+        undoButton.setOnClickListener(this);
 
     }
 
@@ -59,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Passes the array of directions into the new activity
                 goToDirectionList.putStringArrayListExtra("listOfDirections", directionList);
                 startActivity(goToDirectionList);
+                break;
+            case (R.id.undoButton):
+                directionList.remove(directionList.size() - 1); //Remove last element from the list (most recently inputted item)
                 break;
         }
     }
