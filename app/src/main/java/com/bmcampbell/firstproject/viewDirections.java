@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
-
 import java.util.Collections;
 
 public class viewDirections extends AppCompatActivity implements View.OnClickListener{
@@ -51,10 +49,15 @@ public class viewDirections extends AppCompatActivity implements View.OnClickLis
         switch (view.getId()) {
             case (R.id.resetButton):
                 //Clears the direction array and updates the display accordingly
-                directions.clear();
                 ListView dirListView = findViewById(R.id.directionListView);
                 ArrayAdapter<String> listDirectionAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, directions);
                 dirListView.setAdapter(listDirectionAdapter);
+
+                //Once reset button is pressed, go back to initial activity and reset the direction array
+                //I'm not sure why this works, but the array seems to be reset in MainActivity although I don't actually receive the intent explicitly
+                Intent goBack = new Intent(viewDirections.this, MainActivity.class);
+                goBack.putStringArrayListExtra("newListOfDirections", directions);
+                startActivity(goBack);
                 break;
         }
     }

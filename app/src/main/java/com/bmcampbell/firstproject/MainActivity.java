@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button leftButton;
     private Button homeButton;
     private Button undoButton;
-    ArrayList<String> directionList = new ArrayList<>();
+    public ArrayList<String> directionList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         undoButton.setOnClickListener(this);
 
     }
+
 
     //If right, left, or straight is clicked, a message displayed to screen (for now) and corresponding direction is added to an ArrayList.
     @Override
