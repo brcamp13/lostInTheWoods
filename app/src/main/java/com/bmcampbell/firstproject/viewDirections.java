@@ -4,22 +4,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import java.util.ArrayList;
+
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
+
 import java.util.Collections;
 
-public class viewDirections extends AppCompatActivity {
+public class viewDirections extends AppCompatActivity implements View.OnClickListener{
+
+
+    private Button resetButton;
+    ArrayList<String> directions;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_directions);
 
+        resetButton = findViewById(R.id.resetButton);
+        resetButton.setOnClickListener(this);
+
         Intent newIntent = getIntent();
-        ArrayList<String> directions = newIntent.getStringArrayListExtra("listOfDirections"); //Put direction list into new variable
+        directions = newIntent.getStringArrayListExtra("listOfDirections"); //Put direction list into new variable
+
 
         revFunc(directions); //Reverse the list of directions
-
         revDirections(directions); //Reverses each direction within direction list
 
         //Create and set an adapter. This in essence acts as the bridge between the list of directions and the UI
@@ -27,6 +41,22 @@ public class viewDirections extends AppCompatActivity {
         ArrayAdapter<String> listDirectionAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, directions);
         dirListView.setAdapter(listDirectionAdapter);
 
+    }
+
+    //This method clears the direction array within viewDirections component once reset button is pressed
+    //Need to make it so that this change is also applied to the array within MainActivity
+    @Override
+    public void onClick(View view)
+    {
+        switch (view.getId()) {
+            case (R.id.resetButton):
+                //Clears the direction array and updates the display accordingly
+                directions.clear();
+                ListView dirListView = findViewById(R.id.directionListView);
+                ArrayAdapter<String> listDirectionAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, directions);
+                dirListView.setAdapter(listDirectionAdapter);
+                break;
+        }
     }
 
 
