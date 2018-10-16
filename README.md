@@ -12,7 +12,7 @@
 - [ ] Implement unit testing with Junit (or at least learn about junit and determine if its applicable to this application)
 - [ ] Add some style to the entire application
 - [x] Add the ability to undo a button press
-- [ ] Add the ability to reset a 'journey' while within the app
+- [x] Add the ability to reset a 'journey' while within the app
 - [ ] Get screenshots and add to portfolio site
 - [ ] Put app on the Google Play Store
 ### Future: 
