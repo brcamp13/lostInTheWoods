@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button homeButton;
     private Button undoButton;
     public ArrayList<String> directionList = new ArrayList<>();
+    //private View colorView = (View)findViewById(R.id.viewWrapper);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Connect widgets from java => UI. Also set the on click listeners for all buttons
         straightButton = findViewById(R.id.straightButton);
         rightButton = findViewById(R.id.rightButton);
         leftButton = findViewById(R.id.leftButton);
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         leftButton.setOnClickListener(this);
         homeButton.setOnClickListener(this);
         undoButton.setOnClickListener(this);
+
+        //colorView.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
     }
 
@@ -65,8 +69,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(goToDirectionList);
                 break;
             case (R.id.undoButton):
-                directionList.remove(directionList.size() - 1); //Remove last element from the list (most recently inputted item)
-                break;
+                if(directionList.size() < 1){
+                    break;
+                }else {
+                    directionList.remove(directionList.size() - 1); //Remove last element from the list (most recently inputted item)
+                    break;
+                }
         }
     }
 }

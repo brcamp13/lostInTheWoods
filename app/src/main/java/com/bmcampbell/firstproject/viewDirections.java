@@ -64,14 +64,14 @@ public class viewDirections extends AppCompatActivity implements View.OnClickLis
 
 
     //Reverses an ArrayList of strings
-    private ArrayList<String> revFunc(ArrayList<String> directionList){
+    public ArrayList<String> revFunc(ArrayList<String> directionList){
         Collections.reverse(directionList);
         return directionList;
     }
 
 
     //"Reverses" each direction within the direction list
-    private ArrayList<String> revDirections(ArrayList<String> directionList){
+    public ArrayList<String> revDirections(ArrayList<String> directionList){
         for(int i = 0; i < directionList.size(); i++){
             switch (directionList.get(i)) {
                 case ("Right"):
