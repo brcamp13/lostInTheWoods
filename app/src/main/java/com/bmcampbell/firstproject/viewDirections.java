@@ -9,12 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
+
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.util.Collections;
 
 public class viewDirections extends AppCompatActivity implements View.OnClickListener{
 
-
+    //Creation of widgets
     private Button resetButton;
+    private InterstitialAd transitionAdvertisement;
     ArrayList<String> directions;
 
 
@@ -26,6 +30,11 @@ public class viewDirections extends AppCompatActivity implements View.OnClickLis
 
         resetButton = findViewById(R.id.resetButton);
         resetButton.setOnClickListener(this);
+
+        //Set up advertisement
+        //TODO: Setup the whole ad system based on the android documentation
+        transitionAdvertisement = new InterstitialAd(this);
+        transitionAdvertisement.setAdUnitId();
 
         Intent newIntent = getIntent();
         directions = newIntent.getStringArrayListExtra("listOfDirections"); //Put direction list into new variable

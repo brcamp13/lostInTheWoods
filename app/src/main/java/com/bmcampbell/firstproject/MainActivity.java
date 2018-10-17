@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import java.util.ArrayList;
 import android.content.Intent;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button homeButton;
     private Button undoButton;
     public ArrayList<String> directionList = new ArrayList<>();
-    //private View colorView = (View)findViewById(R.id.viewWrapper);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         leftButton.setOnClickListener(this);
         homeButton.setOnClickListener(this);
         undoButton.setOnClickListener(this);
-
-        //colorView.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
     }
 
