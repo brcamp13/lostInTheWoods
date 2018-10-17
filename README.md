@@ -15,6 +15,7 @@
 - [x] Add the ability to reset a 'journey' while within the app
 - [ ] Get screenshots and add to portfolio site
 - [ ] Put app on the Google Play Store
+- [ ] Add slightly non-intrusive ads in the case that people actually download this
 ### Future: 
 - [ ] Allow users to save, access, and delete journeys
 - [ ] Allow users to add a tag and a note about a given saved journey
