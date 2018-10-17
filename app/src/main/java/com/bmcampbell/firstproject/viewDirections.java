@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
-
 import com.google.android.gms.ads.InterstitialAd;
-
+import com.google.android.gms.ads.MobileAds;
 import java.util.Collections;
+
 
 public class viewDirections extends AppCompatActivity implements View.OnClickListener{
 
@@ -32,9 +32,10 @@ public class viewDirections extends AppCompatActivity implements View.OnClickLis
         resetButton.setOnClickListener(this);
 
         //Set up advertisement
-        //TODO: Setup the whole ad system based on the android documentation
+        //TODO: Actually implement an advertisement. All of the logistics are set up
+        MobileAds.initialize(this, "ca-app-pub-7468869013906106-4789576572");
         transitionAdvertisement = new InterstitialAd(this);
-        transitionAdvertisement.setAdUnitId();
+        transitionAdvertisement.setAdUnitId("ca-app-pub-7468869013906106/7802203989");
 
         Intent newIntent = getIntent();
         directions = newIntent.getStringArrayListExtra("listOfDirections"); //Put direction list into new variable
