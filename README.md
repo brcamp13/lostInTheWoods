@@ -13,11 +13,9 @@
 - [ ] Add some style to the entire application
 - [x] Add the ability to undo a button press
 - [x] Add the ability to reset a 'journey' while within the app
-- [ ] Get screenshots and add to portfolio site
-- [ ] Put app on the Google Play Store
-- [ ] Add slightly non-intrusive ads in the case that people actually download this
-### Future: 
+- [ ] Use fragments to restructure the entire application in order to accomodate the below
+- [ ] **Use sqlite to:** 
 - [ ] Allow users to save, access, and delete journeys
 - [ ] Allow users to add a tag and a note about a given saved journey
-- [ ] Do this using local storage on user device rather than using an external server + database
-- [ ] Provide an interface for all of the above 
+- [ ] Get screenshots and add to portfolio site
+- [ ] Put app on the Google Play Store
