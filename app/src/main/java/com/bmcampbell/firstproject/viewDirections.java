@@ -3,22 +3,19 @@ package com.bmcampbell.firstproject;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
-import java.util.ArrayList;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
+
 import java.util.Collections;
+import java.util.ArrayList;
 
 
 public class viewDirections extends AppCompatActivity implements View.OnClickListener{
 
     //Creation of widgets
     private Button resetButton;
-    private InterstitialAd transitionAdvertisement;
     ArrayList<String> directions;
 
 
@@ -30,12 +27,6 @@ public class viewDirections extends AppCompatActivity implements View.OnClickLis
 
         resetButton = findViewById(R.id.resetButton);
         resetButton.setOnClickListener(this);
-
-        //Set up advertisement
-        //TODO: Actually implement an advertisement. All of the logistics are set up
-        MobileAds.initialize(this, "ca-app-pub-7468869013906106-4789576572");
-        transitionAdvertisement = new InterstitialAd(this);
-        transitionAdvertisement.setAdUnitId("ca-app-pub-7468869013906106/7802203989");
 
         Intent newIntent = getIntent();
         directions = newIntent.getStringArrayListExtra("listOfDirections"); //Put direction list into new variable
@@ -58,16 +49,18 @@ public class viewDirections extends AppCompatActivity implements View.OnClickLis
     {
         switch (view.getId()) {
             case (R.id.resetButton):
+
                 //Clears the direction array and updates the display accordingly
                 ListView dirListView = findViewById(R.id.directionListView);
                 ArrayAdapter<String> listDirectionAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, directions);
                 dirListView.setAdapter(listDirectionAdapter);
 
                 //Once reset button is pressed, go back to initial activity and reset the direction array
-                //I'm not sure why this works, but the array seems to be reset in MainActivity although I don't actually receive the intent explicitly
                 Intent goBack = new Intent(viewDirections.this, MainActivity.class);
                 goBack.putStringArrayListExtra("newListOfDirections", directions);
+
                 startActivity(goBack);
+
                 break;
         }
     }

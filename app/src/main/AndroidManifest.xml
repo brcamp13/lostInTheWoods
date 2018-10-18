@@ -13,10 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <meta-data>
-            android:name="com.google.android.gms.ads.ca-app-pub-7468869013906106-4789576572
-            android:value="[ca-app-pub-7468869013906106-4789576572]"
-        </meta-data>
+        <meta-data
+            android:name="com.google.android.gms.ads.ca-app-pub-7468869013906106-4789576572"
+            android:value="ca-app-pub-7468869013906106-4789576572" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

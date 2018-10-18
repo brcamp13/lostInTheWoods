@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.Toast;
 import java.util.ArrayList;
 import android.content.Intent;
-import com.google.android.gms.ads.InterstitialAd;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
