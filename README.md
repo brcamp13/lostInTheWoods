@@ -9,7 +9,7 @@
 - [x] Buttons on MainActivity
 - [x] Open second activity once correct button is pressed
 - [x] Display direction choices in second activity
-- [x] Implement unit testing with Junit (or at least learn about junit and determine if its applicable to this application)
+- [x] Implement unit testing with Junit (or at least learn about junit and determine if it's applicable to this application)
 - [ ] Add some style to the entire application
 - [x] Add the ability to undo a button press
 - [x] Add the ability to reset a 'journey' while within the app
