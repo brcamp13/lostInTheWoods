@@ -13,9 +13,8 @@
 - [ ] Add some style to the entire application
 - [x] Add the ability to undo a button press
 - [x] Add the ability to reset a 'journey' while within the app
-- [ ] Use fragments to restructure the entire application in order to accomodate the below
-- [ ] **Use sqlite to:** 
-- [ ] Allow users to save, access, and delete journeys
-- [ ] Allow users to add a tag and a note about a given saved journey
+- [ ] Use fragments to restructure the entire application in order to accomodate the next two objectives below
+- [ ] Using SQLite, allow users to save, access, and delete journeys
+- [ ] Using SQLite, allow users to add a tag and a note about a given saved journey
 - [ ] Get screenshots and add to portfolio site
 - [ ] Put app on the Google Play Store
