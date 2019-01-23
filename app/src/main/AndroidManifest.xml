@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        android:versionCode=2
-        android:versionName="0.1"
+        android:versionCode="3"
+        android:versionName="3.0"
         <meta-data
             android:name="com.google.android.gms.ads.ca-app-pub-7468869013906106-4789576572"
             android:value="ca-app-pub-7468869013906106-4789576572" />
